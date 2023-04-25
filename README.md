@@ -73,3 +73,7 @@ solid and molecular carbon.
 Detailed instructions are written within the 
 [interface executable file](./run_interface.py).
 
+A example [job submission script](./midway_example.sbatch) for 
+[RCC computing clusters](https://rcc.uchicago.edu/) is provided herewith.
+This can be easily adopted to the requiremnt of other clusters.
+

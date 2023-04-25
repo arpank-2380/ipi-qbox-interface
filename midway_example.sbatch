@@ -18,6 +18,7 @@ total_time=6600      # time (seconds) after which i-pi would prepare for a clean
 ipi_log=ipi.log      # name of the i-pi logfile
 
 #******* Qbox related ********
+qbox_opts="-nstb 2"         #Qbox command line options
 qbox_initial=qbox-init.i    # To initiate Qbox driver (full path or path relative to submission directory)
 qbox_input=input.i          # Regular input file; should be consistent with interface executable
 qbox_output=output.r        # Regular output file; should be consistent with interface executable
@@ -123,10 +124,11 @@ do
     mkdir instance_${i}
     cp $qbox_initial instance_${i}/${qbox_input}
     cd instance_${i}
-    if [[ "$num_nrowmax" -eq 0 ]] && [[ "${NCORE}" -gt 32 ]]; then
-       sed -i "1 i\ set nrowmax $NCORE" ${qbox_input}
-    fi
-    srun -N $NUMNODES -n $NCORE $qb -server $qbox_input $qbox_output > $qbox_log 2>&1 &
+    ### nrowmax insertion, deprecated in qbox
+    #if [[ "$num_nrowmax" -eq 0 ]] && [[ "${NCORE}" -gt 32 ]]; then
+    #   sed -i "1 i\ set nrowmax $NCORE" ${qbox_input}
+    #fi
+    srun -N $NUMNODES -n $NCORE $qb $qb_opts -server $qbox_input $qbox_output > $qbox_log 2>&1 &
     $interface $SLURM_SUBMIT_DIR/$ipi_input $qbox_input $qbox_output > interface.log 2>&1 &
     cd ../
 done
