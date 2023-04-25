@@ -3,7 +3,7 @@
 # Introduction
 
 This interface is designed to couple [Qbox](http://qboxcode.org/) [1], a 
-first principle molecular dynamics code with [i-PI](http://ipi-code.org/)[4], 
+first principle molecular dynamics code with [i-PI](http://ipi-code.org/)[2], 
 a path-integral package. 
 This coupling is done using a client-server protocol. 
 In an iPI---Qbox coupled simulation, 
@@ -64,9 +64,10 @@ solid and molecular carbon.
 *Phys. Rev. Materials* **2021**, 5, L070801
 
 # References
-[1] Kapil *et al*. Comput. Phys. Commun. **2019**, 236, 214.
 
-[2] F. Gygi. IBM J. Res. Dev. **2008**, 52, 137.
+[1] F. Gygi. IBM J. Res. Dev. **2008**, 52, 137.
+
+[2] Kapil *et al*. Comput. Phys. Commun. **2019**, 236, 214.
 
 # Instructions
 Detailed instructions are written within the 
