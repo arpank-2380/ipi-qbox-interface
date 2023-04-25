@@ -1,0 +1,16 @@
+This is python-3 version  of i-PI-Qbox interface.
+#--------------------------------------------------------------------------------------------------------------------------------------
+(1) If Kohn-Sham Eigenvalues are calculated, this will be send to i-PI as a string
+    Extra string sending is made very flexible. Currently eigenset and iteration timing is implemented. 
+    But others can be implemented very easily. 
+    In qbox.py there is a line:
+    self.extra_tree_list = ['./iteration/eigenset','./iteration/timing'] 
+    Here in this list just add the other lists.
+    Also Extra can now be sent in either (i) xml or (ii) json format. 
+    For the latter, installed python version must have "xml2dict" package.
+
+(2) A series of qbox plot commands can be utilized to store wave functions, densities.
+    It must be supplied as a list.
+    plot_cmd = ["plot -wf n1 file_prefix_1", "plot -wf n2 file_prefix_2"]
+    file_prefix should determine the prefix of the filename and should not contain .cube extension.
+    Interface would create a directory named cube_files where all cube_files would be stored.
