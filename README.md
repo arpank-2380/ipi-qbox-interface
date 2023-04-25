@@ -70,7 +70,7 @@ solid and molecular carbon.
 
 # Instructions
 Detailed instructions are written within the 
-[interface executable file] (run_interface.py).
+[interface executable file] (./run_interface.py).
 
 # Features
 (1) If Kohn-Sham Eigenvalues are calculated, this will be send to i-PI as a string
