@@ -49,7 +49,7 @@ it creates an output file, which contains the resulting forces and
 stress tensors. Then, the interface client reads the output file and 
 collects the forces and stress tensors, and sends them to the 
 [i-PI](http://ipi-code.org/) server through a socket. 
-Using this information, [i-PI]((http://ipi-code.org/) updates the 
+Using this information, [i-PI](http://ipi-code.org/) updates the 
 ion coordinates and the cell-parameters (if required) again and sends 
 the new coordinates and cell parameters to the interface clients.
 
@@ -70,7 +70,7 @@ solid and molecular carbon.
 
 # Instructions
 Detailed instructions are written within the 
-[interface executable file] (./run_interface.py).
+[interface executable file](./run_interface.py).
 
 # Features
 (1) If Kohn-Sham Eigenvalues are calculated, this will be send to i-PI as a string
