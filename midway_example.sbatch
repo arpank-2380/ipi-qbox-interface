@@ -95,7 +95,7 @@ cd $SLURM_SUBMIT_DIR
 let NTASKS=$(($SLURM_NTASKS_PER_NODE * $SLURM_JOB_NUM_NODES))
 #echo "NTASKS= $NTASKS"
 let NCORE=${NTASKS}/${instance}
-#echo "NCORE= $NCORE"
+echo "NCORE= $NCORE"
 
 let REMAINDER=${NCORE}%${SLURM_NTASKS_PER_NODE}
 
@@ -104,6 +104,8 @@ if [ "${REMAINDER}" -eq 0 ]; then
 else
    let NUMNODES=${NCORE}/${SLURM_NTASKS_PER_NODE}+1
 fi
+
+echo "NUMNODES = $NUMNODES"
 
 ##############################     JOB SUBMISSIONS   ##################################################
 #########################     Do not touch this block    ##############################################
@@ -128,7 +130,7 @@ do
     #if [[ "$num_nrowmax" -eq 0 ]] && [[ "${NCORE}" -gt 32 ]]; then
     #   sed -i "1 i\ set nrowmax $NCORE" ${qbox_input}
     #fi
-    srun -N $NUMNODES -n $NCORE $qb $qb_opts -server $qbox_input $qbox_output > $qbox_log 2>&1 &
+    srun --exclusive -N $NUMNODES -n $NCORE $qb $qb_opts -server $qbox_input $qbox_output > $qbox_log 2>&1 &
     $interface $SLURM_SUBMIT_DIR/$ipi_input $qbox_input $qbox_output > interface.log 2>&1 &
     cd ../
 done
