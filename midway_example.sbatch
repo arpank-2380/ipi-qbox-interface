@@ -31,15 +31,16 @@ interface=../run_interface.py #full path or path-relative to the instance direct
 ######################### i-PI & Qbox related environment and modules #################################
 ########################          Change paths if required            ################################
 export PYTHONUNBUFFERED=TRUE   ### Python environment variable so that outputs are flushed every step
-module load python
-source /home/arpank/i-pi/env.sh
+#module load python
+#source /home/arpank/i-pi/env.sh
+module load i-pi
 
 #************ Loading Qbox related modules ********************
 ######    Adjust this block according to your needs ##########
-#module load qbox/1.67.3+intelmpi-2018.2.199+intel-18.0
+module load qbox
 #module unload mkl cuda openmpi
-module load intelmpi/2018.2.199+intel-18.0 mkl/2018.up2 xerces/3.1.4
-qb=/home/arpank/Qbox/bin/qb-1.71.0-eigval-prec-12
+#module load intelmpi/2018.2.199+intel-18.0 mkl/2018.up2 xerces/3.1.4
+qb=qb #/home/arpank/Qbox/bin/qb-1.71.0-eigval-prec-12
 
 ############################## Load distribution ######################################################
 ################        This is specific to midway @RCC UChicago         ##############################
