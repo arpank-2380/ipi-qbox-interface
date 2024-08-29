@@ -45,7 +45,7 @@ qb=qb #/home/arpank/Qbox/bin/qb-1.71.0-eigval-prec-12
 ############################## Load distribution ######################################################
 ################        This is specific to midway @RCC UChicago         ##############################
 ################   adjust according to your cluster specifications       ############################## 
-export I_MPI_PMI_LIBRARY=/software/slurm-current-el6-x86_64/lib/libpmi.so
+export I_MPI_PMI_LIBRARY=/software/slurm-current-el7-x86_64/lib/libpmi.so
 export I_MPI_FABRICS=shm:dapl
 export OMP_NUM_THREADS=1
 
